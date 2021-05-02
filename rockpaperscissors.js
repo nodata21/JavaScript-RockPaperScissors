@@ -5,7 +5,7 @@ var paper = document.getElementById("paper");
 var scissors = document.getElementById("scissors");
 var well = document.getElementById("well");
 
-var output = document.getElementById("output");
+var output = document.getElementById("output"); var put = document.getElementById("put");
 var ai = document.getElementById("ai");
 
 var text = ''; var cpu = '';
@@ -21,14 +21,20 @@ function play() {
     ai.textContent = hand[cpu]; 
     
     if ( beats[text].includes(hand[cpu]) ) {
-        output.textContent = 'Won!';
+        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
+        output.childNodes[1].textContent = " you Won!";
+        document.getElementById("put").style.color = "Green";
     }
     else if (hand[cpu] == text)
     {
-        output.textContent = "Draw!";
+        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
+        output.childNodes[1].textContent = " it's a Draw!";
+        document.getElementById("put").style.color = "Blue";
     }
     else { 
-        output.textContent = "Lose!";
+        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
+        output.childNodes[1].textContent = " you Lose!";
+        document.getElementById("put").style.color = "Red";
     }
 }
 
