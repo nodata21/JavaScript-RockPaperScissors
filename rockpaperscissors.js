@@ -16,8 +16,6 @@ beats['scissors'] = 'paper';
 
 const hand = ['rock', 'paper', 'scissors'];
 
-
-
 function play() {
 
     input.value = text = this.id;
