@@ -6,6 +6,7 @@ var scissors = document.getElementById("scissors");
 
 var output = document.getElementById("output");
 var ai = document.getElementById("ai");
+var zahl = document.getElementById("zahl");
 
 var text = ''; var cpu = '';
 
@@ -17,14 +18,10 @@ beats['scissors'] = 'paper';
 const hand = ['rock', 'paper', 'scissors'];
 
 function play() {
+    
+    cpu = Math.floor(Math.random() * 3);
 
     input.value = text = this.id;
-
-    var results = new Array(3).fill(0);
-    for(let i=0; i<1000; ++i) {
-        ++results[Math.floor(Math.random()*3)];
-    }
-    cpu = results.indexOf(Math.min(...results));
 
     zahl.textContent = cpu;
     ai.textContent = hand[cpu];
