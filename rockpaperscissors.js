@@ -1,7 +1,13 @@
 var input = document.getElementById("input");
-var button = document.getElementById("button");
+
+var rock = document.getElementById("rock");
+var paper = document.getElementById("paper");
+var scissors = document.getElementById("scissors");
+
 var output = document.getElementById("output");
 var ai = document.getElementById("ai");
+
+var text = '';
 
 const beats = [];
 beats['rock'] = 'scissors';
