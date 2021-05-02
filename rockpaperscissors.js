@@ -7,7 +7,7 @@ var scissors = document.getElementById("scissors");
 var output = document.getElementById("output");
 var ai = document.getElementById("ai");
 
-var text = '';
+var text = ''; var cpu = '';
 
 const beats = [];
 beats['rock'] = 'scissors';
@@ -16,22 +16,17 @@ beats['scissors'] = 'paper';
 
 const hand = ['rock', 'paper', 'scissors'];
 
+
+
 function play() {
 
     input.value = text = this.id;
-    //input.value = text;
-    
-    z = Math.floor(Math.random() * (10 - 1));
-    if (z <= 3) {
-        z = 0;
+
+    var results = new Array(3).fill(0);
+    for(let i=0; i<1000; ++i) {
+        ++results[Math.floor(Math.random()*3)];
     }
-    else if ( z >= 3 && z <= 6) {
-        z = 1;
-    }
-    else if ( z > 6 ) {
-        z = 2;
-    }
-    cpu = z;
+    cpu = results.indexOf(Math.min(...results));
 
     zahl.textContent = cpu;
     ai.textContent = hand[cpu];
