@@ -20,7 +20,7 @@ function play() {
     input.value = text = this.id;
     ai.textContent = hand[cpu]; 
     
-    if ( Object.values(beats[text]).includes(hand[cpu]) ) {
+    if ( beats[text].includes(hand[cpu]) ) {
         output.textContent = 'Won!';
     }
     else if (hand[cpu] == text)
