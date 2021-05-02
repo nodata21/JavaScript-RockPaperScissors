@@ -6,7 +6,6 @@ var scissors = document.getElementById("scissors");
 var well = document.getElementById("well");
 
 var output = document.getElementById("output"); var put = document.getElementById("put");
-var ai = document.getElementById("ai");
 
 var text = ''; var cpu = '';
 
@@ -18,7 +17,6 @@ function play() {
     
     cpu = Math.floor(Math.random() * 4);
     input.value = text = this.id;
-    ai.textContent = hand[cpu]; 
     
     if ( beats[text].includes(hand[cpu]) ) {
         output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
