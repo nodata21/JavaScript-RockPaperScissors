@@ -21,18 +21,18 @@ function play() {
     if ( beats[text].includes(hand[cpu]) ) {
         first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
         last.textContent = "you Won!";
-        document.getElementById("last").style.color = "Green";
+        last.style.color = "Green";
     }
     else if (hand[cpu] == text)
     {
         first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
         last.textContent = "it's a Draw!";
-        document.getElementById("last").style.color = "Blue";
+        last.style.color = "Blue";
     }
     else { 
         first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
         last.textContent = "you Lose!";
-        document.getElementById("last").style.color = "Red";
+        last.style.color = "Red";
     }
 }
 
