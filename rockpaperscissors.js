@@ -5,11 +5,11 @@ var paper = document.getElementById("paper");
 var scissors = document.getElementById("scissors");
 var well = document.getElementById("well");
 
-var output = document.getElementById("output"); var put = document.getElementById("put");
+var output = document.getElementById("output"); var first = document.getElementById("first"); var put = document.getElementById("last");
 
-var text = ''; var cpu = '';
+var text = ''; var leer =", "; var cpu = '';
 
-const beats = {'rock' : ['scissors'], 'paper': ['rock'], 'scissors': ['paper'], 'well': ['rock', 'scissors'] };
+const beats = {'rock' : ['scissors'], 'paper': ['rock', 'well'], 'scissors': ['paper'], 'well': ['rock', 'scissors'] };
 
 const hand = ['rock', 'paper', 'scissors', 'well'];
 
@@ -19,20 +19,20 @@ function play() {
     input.value = text = this.id;
     
     if ( beats[text].includes(hand[cpu]) ) {
-        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
-        output.childNodes[1].textContent = " you Won!";
-        document.getElementById("put").style.color = "Green";
+        first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
+        last.textContent = "you Won!";
+        document.getElementById("last").style.color = "Green";
     }
     else if (hand[cpu] == text)
     {
-        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
-        output.childNodes[1].textContent = " it's a Draw!";
-        document.getElementById("put").style.color = "Blue";
+        first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
+        last.textContent = "it's a Draw!";
+        document.getElementById("last").style.color = "Blue";
     }
     else { 
-        output.childNodes[0].textContent = "Cpu plays "+ hand[cpu] + ", you play "+ text + ",";
-        output.childNodes[1].textContent = " you Lose!";
-        document.getElementById("put").style.color = "Red";
+        first.textContent = "Cpu plays " + hand[cpu] + ", you play " + text + ",\u00A0";
+        last.textContent = "you Lose!";
+        document.getElementById("last").style.color = "Red";
     }
 }
 
